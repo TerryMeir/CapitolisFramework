@@ -1,5 +1,4 @@
 Lib/site-packages
-.env*
 Scripts
 pyvenv.cfg
 .pytest_cache
