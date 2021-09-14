@@ -14,9 +14,12 @@ class CapitolisTests(BasicTest):
     def test_iframe(self, browser):
         frames_page = BasePage(browser).click_frames()
         frames_page.send_text("Terry Meir")
+        assert True
 
     def test_dynamic_loading(self, browser):
-        pass
+        dynamic_page = BasePage(browser).click_dynamic_loading()
+        dynamic_page.see_hello_world()
+        assert True
 
     def test_jquery_menu(self, browser):
         pass
