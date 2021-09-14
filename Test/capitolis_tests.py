@@ -3,23 +3,26 @@ from Pages.base_page import BasePage
 
 
 class CapitolisTests(BasicTest):
-    def test_checkboxes(self, browser):
-        checkboxes_page = BasePage(browser).click_checkboxes()
+    def __init__(self, browser):
+        self.driver = browser
+
+    def test_checkboxes(self):
+        checkboxes_page = BasePage(self.driver).click_checkboxes()
         checkboxes_page.toggle_checkboxes()
         assert True
 
-    def test_basic_auth(self, browser):
-        pass
-
-    def test_iframe(self, browser):
-        frames_page = BasePage(browser).click_frames()
+    def test_iframe(self):
+        frames_page = BasePage(self.driver).click_frames()
         frames_page.send_text("Terry Meir")
         assert True
 
-    def test_dynamic_loading(self, browser):
-        dynamic_page = BasePage(browser).click_dynamic_loading()
+    def test_dynamic_loading(self):
+        dynamic_page = BasePage(self.driver).click_dynamic_loading()
         dynamic_page.see_hello_world()
         assert True
 
-    def test_jquery_menu(self, browser):
+    def test_jquery_menu(self):
+        pass
+
+    def test_basic_auth(self):
         pass

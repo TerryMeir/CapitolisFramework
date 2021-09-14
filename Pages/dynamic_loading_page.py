@@ -19,5 +19,5 @@ class DynamicLoadingPage:
         self._example_b_button.click()
         HTMLElement(self.driver, by=By.CSS_SELECTOR, locator_value=DynamicLoadingSelector.StartButton).click()
         hello_world_element = WebDriverWait(self.driver, 30).until(ec.presence_of_element_located((By.CSS_SELECTOR, DynamicLoadingSelector.HelloWorld)))
-        if hello_world_element.text is "Hello World!":
+        if hello_world_element.text == "Hello World!":
             assert True

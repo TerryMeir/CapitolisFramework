@@ -17,7 +17,7 @@ def pytest_addoption(parser):
 # higher than function I have scope = session
 # in every function i will call this driver i will get always the same webdriver (same window)
 # so if i will want to keep the session open from functions that does different actions i need to use 'scope = session'
-@fixture(params=[webdriver.Chrome, webdriver.Firefox], scope="function")
+@fixture(params=[webdriver.Chrome, webdriver.Firefox], scope="session")
 def browser(request):
     drvr = request.param
     driver = drvr()
