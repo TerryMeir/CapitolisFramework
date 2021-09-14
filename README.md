@@ -28,3 +28,13 @@ Installing dependencies:
 pip install: selenium, pytest, python-dotenv
 
 clone project from git inside %USERPROFILE%\venvs\*project name*
+
+make sure you have chrome webdriver and gecodriver(firefox)
+
+every test needs to start from terminal with the command: 
+pytest --env qa 
+or 
+pytest --env prod
+to get more info printed to console you can add -s -v
+
+
