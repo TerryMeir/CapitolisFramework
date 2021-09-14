@@ -44,6 +44,23 @@ class HTMLElement(object):
         time.sleep(1)
         self._web_element.send_keys(txt)
 
+    def toggle_checkbox(self):
+        if self.is_selected():
+            self.click()
+            if self.is_selected() is False:
+                return 1
+            else:
+                return 0
+        elif self.is_selected() is False:
+            self.click()
+            if self.is_selected():
+                return 1
+            else:
+                return 0
+
+    def is_selected(self):
+        return self._web_element.is_selected()
+
     @property
     def text(self):
         txt = self._web_element.text
